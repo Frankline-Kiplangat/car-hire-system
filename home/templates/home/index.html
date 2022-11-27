@@ -1,0 +1,55 @@
+{% load static %}
+<html>
+<head>
+  <title>Online Car Hire System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf_token" content="{{ csrf_token }}">
+  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+</head>
+<style>
+  body{
+    background-image: url("/static/images/home1.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          z-index: -1;
+  }
+  h1{
+    color: white;
+    text-align: center;
+  }
+  h2{
+    text-align: center;
+    color: white;
+    font-size: large;
+  }
+  p{
+    color: rgb(252, 250, 253);
+  }
+.container{
+  text-align: center;
+}
+  </style>
+<body>
+  <div class="w3-container w3-teal w3-black">
+    <h1 class="col-md-4">Online Car Hire System<h1>
+  </div>
+  <div class="container-fluid text-center landing">
+    <h2 class="mb-4 d-none d-md-block text-center">
+      <strong>Hello! Welcome to Our System.<br>
+        Hire a car of your choice</strong>
+    </h2>
+    </div>
+  <div class="display-container" >
+    <div class="w3-display-middle">
+  <form class="container" action="/client_portal/login/" mehtod="POST">{% csrf_token %}
+    <p class="">Are you a customer? Log in here.</p>
+    <input class="w3-blue w3-btn w3-xxlarge w3-padding-20" type="submit" value="Login">
+  </form>
+  <form class="container" action="/owner_portal/login/" method="POST">{% csrf_token %}
+    <p class="">Are you a car Dealer? Log in here. </p>
+    <input class="w3-btn w3-blue w3-xxlarge w3-padding-20" type="submit" value="Login">
+  <form>
+  </div>
+</div>
+<body>
+</html>

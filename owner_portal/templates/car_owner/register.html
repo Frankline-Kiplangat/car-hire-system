@@ -1,0 +1,28 @@
+{% extends 'car_owner/base.html' %}
+{% block content %}
+<style>
+  .container{
+    margin: -90px;
+  }
+</style>
+<div class="container">
+</div>
+<div class="w3-display-container"  style="height:1000px;">
+<div class="w3-display-middle">
+
+<strong><h1 class="text-center" style='color:#8a3ab9;'>Dealer, Sign Up Here</h1></strong>
+
+<form class="w3-container" action="/owner_portal/registration/" method="POST"> {% csrf_token %}
+  <lable>First Name</lable> <input class="w3-input" type="text" name="firstname" required><br>
+  <lable>Last Name</lable> <input class="w3-input" type="text" name="lastname" required><br>
+  <lable>Username</lable> <input class="w3-input" type="text" name="username" required><br>
+  <lable>Password</lable> <input class="w3-input" type="password" name="password" required><br>
+  <lable>Email</lable> <input class="w3-input" type="text" name="email" required><br>
+  <lable>Contact</lable> <input class="w3-input" type="text" name="mobile" required><br>
+  <lable>City</lable> <input class="w3-input" type="text" name="city" required><br><br>
+  <input class="w3-btn w3-teal" type="submit">
+  <a class="btn btn-primary" href="/owner_portal/login/">Go back to Login</a>
+</form>
+</div>
+</div>
+{% endblock %}

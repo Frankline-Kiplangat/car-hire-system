@@ -1,0 +1,27 @@
+{% extends 'car_owner/base.html' %}
+{% block content %}
+{% load static %}
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black">Dealer : {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right w3-black" href="/owner_portal/auth/">Home</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right w3-black" href="/owner_portal/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right w3-black" href="/owner_portal/order_list/">Orders</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right w3-black" href="/owner_portal/manage_vehicles/">Vehicles</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right w3-black" href="/owner_portal/car_history/">Earnings</a>
+</div>
+<div class="w3-display-container" style="height:500px;">
+  <div class="w3-display-left" style="padding-left: 200px;">
+<h3 class="btn btn-primary " style="padding:8px; text-align:center">Post Available Cars</h3>
+<form class="w3-container" action="/owner_portal/add_vehicle/" method="post">{% csrf_token %}
+  <lable>Car Name :</lable> <input class="w3-input" type="text" name="car_name" required>
+  <lable>Color :</lable> <input class="w3-input" type="text" name="color" required>
+  <lable>City :</lable> <input class="w3-input" type="text" name="city" required>
+  <lable>Description :</lable> <input class="w3-input" type="text" name="description" required>
+  <lable>Capacity (Seats) :</lable> <input class="w3-input" type="text" name="capacity" required><br>
+  <input class="w3-btn w3-green" type="submit" value="Add Car"><br>
+<form>
+</div>
+<div class = "w3-display-right">
+  <img src="/static/images/fortuner.JPG" width="700px"  style="margin-top: -100px;">
+</div>
+{% endblock %}
